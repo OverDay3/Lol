@@ -5,8 +5,8 @@ from random import randint
 
  
 FPS = 60
-WIN_WIDTH = 400
-WIN_HEIGHT = 400
+WIN_WIDTH = 1600
+WIN_HEIGHT = 900
 WHITE = (255, 255, 255)
 ORANGE = (255, 150, 100)
 r = 10
@@ -15,10 +15,6 @@ h = 50
 clock = pygame.time.Clock()
 sc = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
 pygame.display.set_caption("LOL")
-
-
-y = WIN_HEIGHT -20
-x = WIN_WIDTH // 2
 
 
 direction = False
