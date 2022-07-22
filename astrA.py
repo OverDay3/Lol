@@ -11,6 +11,9 @@ WHITE = (255, 255, 255)
 ORANGE = (255, 150, 100)
 r = 10
 h = 50
+
+x = 0
+y = 0
  
 clock = pygame.time.Clock()
 sc = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
@@ -44,6 +47,8 @@ while 1:
             x-=5
         elif direction == K_d:
             x+=5
+        elif direction == K_ESCAPE:
+            exit(0)
     sc.fill((0,0,0))
     pygame.draw.rect(sc, (255, 255, 255), 
                      (x1, y1, l, h)) 
