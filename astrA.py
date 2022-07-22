@@ -48,7 +48,8 @@ while 1:
         elif direction == K_d:
             x+=5
         elif direction == K_ESCAPE:
-            exit(0)
+            pygame.quit()
+            sys.exit()
     sc.fill((0,0,0))
     pygame.draw.rect(sc, (255, 255, 255), 
                      (x1, y1, l, h)) 
