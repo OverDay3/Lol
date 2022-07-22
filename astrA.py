@@ -12,8 +12,8 @@ ORANGE = (255, 150, 100)
 r = 10
 h = 50
 
-x = 0
-y = 0
+x = WIN_WIDTH // 2
+y = WIN_HEIGHT - 40
  
 clock = pygame.time.Clock()
 sc = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
