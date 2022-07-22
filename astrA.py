@@ -1,7 +1,7 @@
 import pygame
 import sys
 from pygame.locals import *
-from random import randint #testing
+from random import randint
 
  
 FPS = 60
