@@ -3,12 +3,12 @@ import sys
 from pygame.locals import *
 from random import randint #testing
 
- 
 FPS = 60
-WIN_WIDTH = 1600
-WIN_HEIGHT = 900
+WIN_WIDTH = 400
+WIN_HEIGHT = 400
 WHITE = (255, 255, 255)
 ORANGE = (255, 150, 100)
+
 r = 10
 h = 50
 
@@ -30,25 +30,42 @@ n = 1
 x2 = l + pr
 y2 = -h
 
+move = [False, False, False, False]
+playerSpeed = 3
 
-while 1:
+while True:
+
     for i in pygame.event.get():
+        tap = False
+        if i.type == KEYDOWN: tap = True
+
         if i.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
-        if i.type == KEYDOWN: direction = i.key # Other key pressed
-        if i.type == KEYUP:  direction = False # Key released
-    if direction:
-        if direction == K_w:
-            y-=5
-        elif direction == K_s:
-            y+=5
-        elif direction == K_a:
-            x-=5
-        elif direction == K_d:
-            x+=5
-        elif direction == K_ESCAPE:
-            exit(0)
+
+        if tap == True:
+            if i.key == K_w: move[0] = True
+            if i.key == K_s: move[1] = True
+            if i.key == K_a: move[2] = True
+            if i.key == K_d: move[3] = True
+            if i.key == K_ESCAPE: exit(0)
+
+        tap = False
+        if i.type == KEYUP: tap = True
+
+        if tap == True:
+            if i.key == K_w: move[0] = False
+            if i.key == K_s: move[1] = False
+            if i.key == K_a: move[2] = False
+            if i.key == K_d: move[3] = False
+            if i.key == K_ESCAPE: exit(0)
+
+
+    if move[0] == True: y -= playerSpeed
+    if move[1] == True: y += playerSpeed
+    if move[2] == True: x -= playerSpeed
+    if move[3] == True: x += playerSpeed
+
     sc.fill((0,0,0))
     pygame.draw.rect(sc, (255, 255, 255), 
                      (x1, y1, l, h)) 
