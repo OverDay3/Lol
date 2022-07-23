@@ -1,7 +1,8 @@
 import pygame
 import sys
 from pygame.locals import *
-from random import randint #testing
+from random import randint
+from playerMove import posX, posY
 
 FPS = 60
 WIN_WIDTH = 400
@@ -61,10 +62,8 @@ while True:
             if i.key == K_ESCAPE: exit(0)
 
 
-    if move[0] == True: y -= playerSpeed
-    if move[1] == True: y += playerSpeed
-    if move[2] == True: x -= playerSpeed
-    if move[3] == True: x += playerSpeed
+    x = posX(x, move, playerSpeed)
+    y = posY(y, move, playerSpeed)
 
     sc.fill((0,0,0))
     pygame.draw.rect(sc, (255, 255, 255), 
