@@ -3,6 +3,7 @@ import sys
 from pygame.locals import *
 from random import randint
 from playerMove import posX, posY
+from monitor import paintOnMonitor
 
 FPS = 60
 WIN_WIDTH = 400
@@ -65,13 +66,6 @@ while True:
     x = posX(x, move, playerSpeed)
     y = posY(y, move, playerSpeed)
 
-    sc.fill((0,0,0))
-    pygame.draw.rect(sc, (255, 255, 255), 
-                     (x1, y1, l, h)) 
-    pygame.draw.rect(sc, (255, 255, 255), 
-                     (x2, y2, WIN_WIDTH - l - pr , h))    
-    pygame.draw.circle(sc, ORANGE,
-                       (x, y), r)
     if x > WIN_WIDTH - r:
         x = WIN_WIDTH - r
     elif x < r:
@@ -87,6 +81,7 @@ while True:
         l = randint(0, WIN_WIDTH-pr)
         n += 0.05
         
+    paintOnMonitor(sc, x1, y1, l, h, x2, y2, WIN_WIDTH, pr, ORANGE, r, pygame, x, y)
     pygame.display.update()
     
  
