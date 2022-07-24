@@ -8,8 +8,6 @@ from monitor import paintOnMonitor
 FPS = 60
 WIN_WIDTH = 400
 WIN_HEIGHT = 400
-WHITE = (255, 255, 255)
-ORANGE = (255, 150, 100)
 
 r = 10
 h = 50
@@ -81,7 +79,7 @@ while True:
         l = randint(0, WIN_WIDTH-pr)
         n += 0.05
         
-    paintOnMonitor(sc, x1, y1, l, h, x2, y2, WIN_WIDTH, pr, ORANGE, r, pygame, x, y)
+    paintOnMonitor(sc, x1, y1, l, h, x2, y2, WIN_WIDTH, pr, r, pygame, x, y)
     pygame.display.update()
     
  
